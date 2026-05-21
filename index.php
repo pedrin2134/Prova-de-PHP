@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca de óleo</title>
+</head>
+<body>
+    <h3>TROCA DE ÓLEO</h3>
+<form method="POST">
+    <label>ESCOLHA O TIPO DE ÓLEO PARA SEU VEÍCULO:</label><br><br>
+    <P>1 - MINERAL / 2 - SEMI-SINTÉTICO / 3 - SINTÉTICO</P><br><br>
+    <input type="number" name="num" step="1" max="3" step="1" required/><br><br>
+    <label>DIGITE O VALOR DA ENTRADA</label><br><br>
+    <input type="number" name="valor" step="0.01" required/><br><br>
+    <input type="submit" value="Calcular"/>   
+</form>
+    <?php
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $num = $_POST['num'] ;
+        $valor = (float) $_POST["valor"];
+        switch ($num){
+            case 1:
+               $tipo = "MINERAL";
+               $preco = 70.00;
+                break;
+            case 2:
+                $tipo = "SEMI-SINTÉTICO";
+                $preco = 100.00;
+                break;
+            case 3:
+                $tipo = "SINTÉTICO";
+                $preco = 150.00;
+                break;
+            default:
+                echo "PRODUTO INEXISTENTE OU INVÁLIDO";
+                echo "VALOR DEVOLVIDO";
+                exit();
+        }
+        if ($valor < $preco){
+        echo "Valor Insuficiente <br>";
+        echo "Dinheiro Devolvido";
+        }
+        else{
+            $troco = $valor - $preco;
+            echo "Produto escolhido: $tipo <br>";
+            echo "Preço do serviço: $preco <br>";
+            echo "Troco: $troco <br>";
+        }
+    }
+    ?>
+</body>
+</html>
