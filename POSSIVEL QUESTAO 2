@@ -1,0 +1,105 @@
+```php id="m4qk2n"
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Primeira Avaliação LTPII - PHP</title>
+</head>
+
+<body>
+
+<h2>Primeira Avaliação LTPII - PHP</h2>
+
+<form method="POST">
+
+    <label>Primeiro Nome:</label><br>
+    <input type="text" name="primeiroNome" value="Hugo Motta"><br><br>
+
+    <label>Segundo Nome:</label><br>
+    <input type="text" name="segundoNome" value="Mõnica Silva"><br><br>
+
+    <label>Primeiro Número:</label><br>
+    <input type="number" name="primeiroNumero" value="16"><br><br>
+
+    <label>Segundo Número:</label><br>
+    <input type="text" name="segundoNumero" value="125.25"><br><br>
+
+    <label>Terceiro Número:</label><br>
+    <input type="number" name="terceiroNumero" value="2"><br><br>
+
+    <label>Quarto Número:</label><br>
+    <input type="number" name="quartoNumero" value="4"><br><br>
+
+    <button type="submit">Calcular</button>
+
+</form>
+
+<?php
+
+if($_POST){
+
+    $primeiroNome = $_POST['primeiroNome'];
+    $segundoNome = $_POST['segundoNome'];
+
+    $primeiroNumero = $_POST['primeiroNumero'];
+    $segundoNumero = $_POST['segundoNumero'];
+    $terceiroNumero = $_POST['terceiroNumero'];
+    $quartoNumero = $_POST['quartoNumero'];
+
+    $multiplicacao = $primeiroNumero * $terceiroNumero;
+    $resto = $multiplicacao % $quartoNumero;
+
+    echo "<hr>";
+
+    echo "Quarto Número >= Terceiro Número bool = ";
+    var_dump($quartoNumero >= $terceiroNumero);
+
+    echo "<br><br>";
+
+    echo "Segundo Número == Primeiro Número = ";
+    var_dump($segundoNumero == $primeiroNumero);
+
+    echo "<br><br>";
+
+    echo "A raiz quadrada do Primeiro Número ($primeiroNumero) = "
+        . sqrt($primeiroNumero);
+
+    echo "<br><br>";
+
+    echo "O Primeiro Número ($primeiroNumero) elevado ao Terceiro Número ($terceiroNumero) = "
+        . pow($primeiroNumero, $terceiroNumero);
+
+    echo "<br><br>";
+
+    echo "Arredondando Segundo Número ($segundoNumero) = "
+        . round($segundoNumero);
+
+    echo "<br><br>";
+
+    echo "O Segundo Nome: $segundoNome possui "
+        . mb_strlen($segundoNome) . " caracteres";
+
+    echo "<br><br>";
+
+    echo "O primeiro Nome: $primeiroNome com todos caracteres em Minúsculo = "
+        . mb_strtolower($primeiroNome);
+
+    echo "<br><br>";
+
+    echo "Primeiro Nome == Segundo Nome = ";
+    var_dump($primeiroNome == $segundoNome);
+
+    echo "<br><br>";
+
+    echo "O Primeiro Número ($primeiroNumero) multiplicado pelo Terceiro Número ($terceiroNumero) = $multiplicacao";
+
+    echo "<br><br>";
+
+    echo "O resto da divisão de ($multiplicacao) pelo Quarto Número ($quartoNumero) = $resto";
+}
+
+?>
+
+</body>
+</html>
+```
