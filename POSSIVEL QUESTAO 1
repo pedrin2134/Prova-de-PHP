@@ -1,0 +1,75 @@
+```php id="q7w2lp"
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Primeira Avaliação LTII - PHP</title>
+</head>
+
+<body>
+
+<h2>Primeira Avaliação LTII - PHP</h2>
+
+<form method="POST">
+
+    <label>Primeiro Número:</label><br>
+    <input type="number" name="primeiroNumero" value="10"><br><br>
+
+    <label>Segundo Número:</label><br>
+    <input type="number" name="segundoNumero" value="15"><br><br>
+
+    <label>Terceiro Número:</label><br>
+    <input type="text" name="terceiroNumero" value="1200.00"><br><br>
+
+    <label>Primeiro Nome:</label><br>
+    <input type="text" name="primeiroNome" value="Ana Cristina"><br><br>
+
+    <label>Segundo Nome:</label><br>
+    <input type="text" name="segundoNome" value="Gustavo Emmanuel"><br><br>
+
+    <label>Terceiro Nome:</label><br>
+    <input type="text" name="terceiroNome" value="Gustavo Júnior"><br><br>
+
+    <button type="submit">Calcular</button>
+
+</form>
+
+<?php
+
+if($_POST){
+
+    $primeiroNumero = $_POST['primeiroNumero'];
+    $segundoNumero = $_POST['segundoNumero'];
+    $terceiroNumero = $_POST['terceiroNumero'];
+
+    $primeiroNome = $_POST['primeiroNome'];
+    $segundoNome = $_POST['segundoNome'];
+    $terceiroNome = $_POST['terceiroNome'];
+
+    // Média
+    $media = ($primeiroNumero + $segundoNumero) / 2;
+
+    // Valor semestral
+    $valorSemestral = $terceiroNumero * 6;
+
+    echo "<hr>";
+
+    echo "A média dos números ($primeiroNumero + $segundoNumero)/2 = $media";
+
+    echo "<br><br>";
+
+    echo strtoupper($primeiroNome) . " e " . strtolower($segundoNome) . 
+    " são casados e $terceiroNome é o único filho(a) desse casal";
+
+    echo "<br><br>";
+
+    echo strtoupper($terceiroNome) . 
+    " é estudante de medicina e gasta semestralmente R$ " . 
+    number_format($valorSemestral, 2, ',', '.') . " com o curso";
+}
+
+?>
+
+</body>
+</html>
+```
