@@ -1,0 +1,22 @@
+
+<?php
+    $n1 = 10;
+    $n2 = 15;
+    $n3 = 1200.00;
+    $nome1 = "Ana Cristina";
+    $nome2 = "Gustavo Emmanuel";
+    $nome3 = "Gustavo Júnior";
+
+    echo("Primeira Avaliação LTII - PHP: Questão 1 Desenvolva a Atividade a seguir:");
+
+    echo nl2br("\n\nPrimeiro Número : $n1\n");
+    echo ("Segundo Número : $n2");
+    echo nl2br("\nTerceiro Número :". number_format($n3,2,'.')."\n");
+    echo ("Primeiro Nome : $nome1");
+    echo nl2br("\nSegundo Nome : $nome2\n");
+    echo ("Terceiro Nome : $nome3");
+
+    echo nl2br("\n\nA média dos números ($n1 + $n2)/2 =".(($n1+$n2)/2));
+    echo nl2br("\n".strtoupper($nome1)." e ".strtolower($nome2)." são casados e $nome3 é o único filho(a) desse casal\n");
+    echo (strtoupper($nome3)." é estudante de medicina e gasta semestralmente R$ ".number_format(($n3*6),2,'.')." com o curso" );
+?>
