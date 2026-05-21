@@ -1,0 +1,30 @@
+<?php
+    $nome1 = "Hugo Motta";
+    $nome2 = "Mõnica Silva";
+    $n1 = 16;
+    $n2 = 125.25;
+    $n3 = 2;
+    $n4 = 4;
+
+    echo ("Primeira Avaliação LTPII - PHP: Questão 2 - Desenvolva a atividade a seguir:");
+
+    echo nl2br("\n\nPrimeiro Nome : $nome1\n");
+    echo ("Segundo Nome : $nome2");
+
+    echo nl2br("\n\nPrimeiro Número = $n1\n");
+    echo ("Segundo Número = $n2");
+    echo nl2br("\nTerceiro Número = $n3\n");
+    echo ("Quarto Número = $n4");
+
+    echo nl2br("\n\nQuarto Número >= Terceiro Número bool = ");var_dump ($n4 >= $n3);
+    echo nl2br("\nSegundo Número == Primeiro Número = ");var_dump ($n2 == $n1);
+    echo nl2br("\nA raiz quadrada do Primeiro Número ($n1) = ". sqrt($n1)."\n");
+    echo ("O Primeiro Número ($n1) elevado ao Terceiro Número ($n3) = ". ($n1 ** $n3));
+    echo nl2br("\nArredondando Segundo Número ($n2) = ".round($n2)."\n");
+    echo ("O Segundo Nome: $nome2 possui ".strlen($nome2) ." caracteres");
+    echo nl2br("\nO primeiro Nome: $nome1 com todos caracteres em Minúsculo = ".strtolower($nome1)."\n" );
+    echo("Primeiro Nome == Segundo Nome = ");var_dump($nome1 == $nome2);
+    echo nl2br("\nO Primeiro Número ($n1) multiplicado pelo Terceiro Número ($n3) = ". ($n1*$n3)."\n");
+    echo("O resto da divisão de (".($n1*$n3).") pelo Quarto Número ($n4) = ".(($n1*$n3) % $n4) );
+
+?>
