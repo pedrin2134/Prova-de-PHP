@@ -1,52 +1,52 @@
-```php id="m4qk2n"
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Primeira Avaliação LTPII - PHP</title>
+    <title>Questão 2</title>
 </head>
 
 <body>
 
-<h2>Primeira Avaliação LTPII - PHP</h2>
+<h2>QUESTÃO 2</h2>
 
 <form method="POST">
 
-    <label>Primeiro Nome:</label><br>
-    <input type="text" name="primeiroNome" value="Hugo Motta"><br><br>
+    <label>Primeiro Nome</label>
+    <input type="text" name="pNome" required><br><br>
 
-    <label>Segundo Nome:</label><br>
-    <input type="text" name="segundoNome" value="Mõnica Silva"><br><br>
+    <label>Segundo Nome</label>
+    <input type="text" name="sNome" required><br><br>
 
-    <label>Primeiro Número:</label><br>
-    <input type="number" name="primeiroNumero" value="16"><br><br>
+    <label>Primeiro Número</label>
+    <input type="number" name="n1" required><br><br>
 
-    <label>Segundo Número:</label><br>
-    <input type="text" name="segundoNumero" value="125.25"><br><br>
+    <label>Segundo Número</label>
+    <input type="text" name="n2" required><br><br>
 
-    <label>Terceiro Número:</label><br>
-    <input type="number" name="terceiroNumero" value="2"><br><br>
+    <label>Terceiro Número</label>
+    <input type="number" name="n3" required><br><br>
 
-    <label>Quarto Número:</label><br>
-    <input type="number" name="quartoNumero" value="4"><br><br>
+    <label>Quarto Número</label>
+    <input type="number" name="n4" required><br><br>
 
-    <button type="submit">Calcular</button>
+    <input type="submit" value="CALCULAR">
 
 </form>
 
 <?php
 
-if($_POST){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $primeiroNome = $_POST['primeiroNome'];
-    $segundoNome = $_POST['segundoNome'];
+    $primeiroNome = $_POST['pNome'];
+    $segundoNome = $_POST['sNome'];
 
-    $primeiroNumero = $_POST['primeiroNumero'];
-    $segundoNumero = $_POST['segundoNumero'];
-    $terceiroNumero = $_POST['terceiroNumero'];
-    $quartoNumero = $_POST['quartoNumero'];
+    $primeiroNumero = $_POST['n1'];
+    $segundoNumero = $_POST['n2'];
+    $terceiroNumero = $_POST['n3'];
+    $quartoNumero = $_POST['n4'];
 
     $multiplicacao = $primeiroNumero * $terceiroNumero;
+
     $resto = $multiplicacao % $quartoNumero;
 
     echo "<hr>";
@@ -82,7 +82,7 @@ if($_POST){
     echo "<br><br>";
 
     echo "O primeiro Nome: $primeiroNome com todos caracteres em Minúsculo = "
-        . mb_strtolower($primeiroNome);
+        . strtolower($primeiroNome);
 
     echo "<br><br>";
 
@@ -102,4 +102,3 @@ if($_POST){
 
 </body>
 </html>
-```
